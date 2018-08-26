@@ -1,0 +1,65 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<head>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <style>
+
+        * {
+            padding:10px;
+        }
+    </style>
+</head>
+<h2>Callcolation Serves Demo </h2>
+
+<form class="container">
+    <div class="form-group">
+        <label for="usr">F'st number :</label>
+        <input type="number" class="form-control" id="fnum">
+    </div>
+    <div class="form-group">
+        <label for="pwd"> S'st number </label>
+        <input type="number" class="form-control" id="snum">
+    </div>
+    <div class="btn-group">
+        <button type="button" class="btn btn-primary"  onclick="Add()">Add</button>
+        <button type="button" class="btn btn-primary" onclick="Subtract()">Subtract</button>
+        <button type="button" class="btn btn-primary" onclick="Divide()">Divide</button>
+        <button type="button" class="btn btn-primary" onclick="Multiply()">Multiply</button>
+    </div>
+    @{
+       var data= ViewData["result"];
+     }
+    <label id="lblresult">result : @data</label>
+
+</form>
+
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
+
+<script>
+    function Add() {
+        var fnum = document.getElementById("fnum");
+        var snum = document.getElementById("snum");
+        location.href = "/Operation/Index?fnum=" + fnum.value + "&secnum=" + snum.value + "&op=Add";
+    }
+    function Subtract() {
+        var fnum = document.getElementById("fnum");
+        var snum = document.getElementById("snum");
+        location.href = "/Operation/Index?fnum=" + fnum.value + "&secnum=" + snum.value + "&op=Subtract";
+
+    }
+    function Divide() {
+        var fnum = document.getElementById("fnum");
+        var snum = document.getElementById("snum");
+        location.href = "/Operation/Index?fnum=" + fnum.value + "&secnum=" + snum.value + "&op=Divide";
+    }
+    function Multiply() {
+        var fnum = document.getElementById("fnum");
+        var snum = document.getElementById("snum");
+        location.href = "/Operation/Index?fnum=" + fnum.value + "&secnum=" + snum.value + "&op=Multiply";
+    }
+
+</script>
